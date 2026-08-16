@@ -24,11 +24,7 @@ from backend.data_preprocessing import (
     split_data
 )
 
-
-# --------------------------------------------------
-# Project paths
-# --------------------------------------------------
-
+#project paths
 BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
@@ -48,11 +44,7 @@ CONFUSION_DIR = os.path.join(
     "confusion_matrices"
 )
 
-
-# --------------------------------------------------
-# Create result directories
-# --------------------------------------------------
-
+#create directories
 os.makedirs(
     RESULTS_DIR,
     exist_ok=True
@@ -63,11 +55,7 @@ os.makedirs(
     exist_ok=True
 )
 
-
-# --------------------------------------------------
-# Models
-# --------------------------------------------------
-
+#models
 MODEL_NAMES = [
     "logistic_regression",
     "decision_tree",
@@ -77,10 +65,7 @@ MODEL_NAMES = [
 ]
 
 
-# --------------------------------------------------
-# Evaluate models
-# --------------------------------------------------
-
+#evaluate models
 def evaluate_models():
 
     # Load and prepare data
@@ -90,8 +75,7 @@ def evaluate_models():
 
     X, y = prepare_features_target(df)
 
-    # IMPORTANT:
-    # Use exactly the same split as training
+    # Using exactly the same split as training
     (
         X_train,
         X_test,
@@ -127,10 +111,7 @@ def evaluate_models():
             X_test
         )[:, 1]
 
-        # --------------------------------------------------
-        # Metrics
-        # --------------------------------------------------
-
+        #metrics
         accuracy = accuracy_score(
             y_test,
             y_pred
@@ -164,10 +145,6 @@ def evaluate_models():
             y_pred
         )
 
-        # --------------------------------------------------
-        # Print metrics
-        # --------------------------------------------------
-
         print(f"Accuracy : {accuracy:.4f}")
         print(f"AUC      : {auc:.4f}")
         print(f"Precision: {precision:.4f}")
@@ -175,10 +152,7 @@ def evaluate_models():
         print(f"F1 Score : {f1:.4f}")
         print(f"MCC      : {mcc:.4f}")
 
-        # --------------------------------------------------
-        # Classification report
-        # --------------------------------------------------
-
+        #classification report
         print("\nClassification Report:")
         print(
             classification_report(
@@ -192,10 +166,7 @@ def evaluate_models():
             )
         )
 
-        # --------------------------------------------------
-        # Confusion Matrix
-        # --------------------------------------------------
-
+        #confusion matrix
         cm = confusion_matrix(
             y_test,
             y_pred
@@ -240,10 +211,7 @@ def evaluate_models():
 
         plt.close()
 
-        # --------------------------------------------------
-        # Store results
-        # --------------------------------------------------
-
+        #store results
         results.append({
             "ML Model": model_name.replace(
                 "_",
@@ -258,10 +226,7 @@ def evaluate_models():
             "MCC": mcc
         })
 
-    # --------------------------------------------------
-    # Save comparison
-    # --------------------------------------------------
-
+    
     results_df = pd.DataFrame(
         results
     )
@@ -291,10 +256,6 @@ def evaluate_models():
 
     return results_df
 
-
-# --------------------------------------------------
-# Main
-# --------------------------------------------------
 
 if __name__ == "__main__":
 

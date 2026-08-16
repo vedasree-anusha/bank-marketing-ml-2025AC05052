@@ -8,11 +8,7 @@ from backend.data_preprocessing import (
     split_data
 )
 
-
-# --------------------------------------------------
-# Project path
-# --------------------------------------------------
-
+#paths
 BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
@@ -22,11 +18,7 @@ TEST_DATA_PATH = os.path.join(
     "test_data.csv"
 )
 
-
-# --------------------------------------------------
-# Create test data
-# --------------------------------------------------
-
+#test_data
 def create_test_data():
 
     # Load original dataset
@@ -80,5 +72,4 @@ def create_test_data():
 
 
 if __name__ == "__main__":
-
     create_test_data()

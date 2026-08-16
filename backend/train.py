@@ -11,11 +11,7 @@ from model.knn import create_model as create_knn_model
 from model.naive_bayes import create_model as create_nb_model
 from model.random_forest import create_model as create_rf_model
 
-
-# --------------------------------------------------
-# Project paths
-# --------------------------------------------------
-
+#paths
 BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
@@ -25,11 +21,7 @@ MODEL_DIR = os.path.join(
     "model"
 )
 
-
-# --------------------------------------------------
-# Model configuration
-# --------------------------------------------------
-
+#model configuration
 MODELS = {
     "logistic_regression": create_logistic_model,
     "decision_tree": create_tree_model,
@@ -38,11 +30,7 @@ MODELS = {
     "random_forest": create_rf_model
 }
 
-
-# --------------------------------------------------
-# Train models
-# --------------------------------------------------
-
+#train models
 def train_models():
 
     (
@@ -119,11 +107,6 @@ def train_models():
         X_test,
         y_test
     )
-
-
-# --------------------------------------------------
-# Main
-# --------------------------------------------------
 
 if __name__ == "__main__":
 

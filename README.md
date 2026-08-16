@@ -120,7 +120,7 @@ The following metrics were calculated for each classification model:
 | **Overall Winner for your dataset** | **Random Forest** is the overall winner. It achieved the highest **AUC (80.91%)**, **F1 Score (51.34%)**, and **MCC (0.4478)**, while maintaining a strong recall of **60.78%**. Although KNN achieved higher accuracy (**89.55%**), its recall was only **30.82%**. Because the dataset is highly imbalanced, Random Forest provides a more balanced and reliable overall performance.                           |
 
 
-## 7. Overall Winner
+## Overall Winner
 
 ### Random Forest
 

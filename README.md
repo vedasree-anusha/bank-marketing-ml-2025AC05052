@@ -168,5 +168,15 @@ streamlit run app.py
 
 [Streamlit Application Link](https://bank-marketing-ml-2025ac05052-rpqchapphthhjc9ygpkn5l4.streamlit.app/)
 
+<img width="959" height="535" alt="image" src="https://github.com/user-attachments/assets/9d7b752f-8f5f-43df-96aa-2a4f8a1a67bd" />
+<img width="959" height="533" alt="image" src="https://github.com/user-attachments/assets/a510a678-7552-4846-a34d-b4bd94edbc36" />
+<img width="959" height="534" alt="image" src="https://github.com/user-attachments/assets/a0a092e9-9bf6-4975-99ea-e6fc28f98ff5" />
+<img width="959" height="530" alt="image" src="https://github.com/user-attachments/assets/06b09b64-8aa0-474d-9096-ec6f05dbfd26" />
+<img width="953" height="536" alt="image" src="https://github.com/user-attachments/assets/801de561-ab07-4080-a76a-97b82ee93ed4" />
+
+
+
+
+
 
 

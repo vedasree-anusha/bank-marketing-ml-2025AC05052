@@ -166,3 +166,7 @@ streamlit run app.py
 ---
 ## Streamlit Application
 
+[Streamlit Application Link](https://bank-marketing-ml-2025ac05052-rpqchapphthhjc9ygpkn5l4.streamlit.app/)
+
+
+

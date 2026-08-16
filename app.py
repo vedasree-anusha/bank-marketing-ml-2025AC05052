@@ -378,7 +378,7 @@ st.pyplot(
 plt.close(fig)
 
 #classification report
-st.subheader("📋 Classification Report")
+st.subheader("Classification Report")
 
 report = classification_report(
     y_test,
@@ -534,5 +534,5 @@ st.success(
 st.divider()
 
 st.caption(
-    "Machine Learning Assignment 2 | 2025AC05052 | Bank Marketing Classification"
+    "Karanam Obulam Vedasree Anusha | 2025AC05052 | Bank Marketing Classification"
 )

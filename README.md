@@ -1,6 +1,6 @@
 # Bank Marketing Classification using Machine Learning
 
-## 1. Problem Statement
+## a. Problem Statement
 
 The objective of this project is to build and evaluate multiple machine learning classification models for predicting whether a bank customer will subscribe to a term deposit as a result of a marketing campaign.
 
@@ -10,7 +10,7 @@ An interactive Streamlit application is also developed to allow users to upload 
 
 ---
 
-## 2. Dataset Description
+## b. Dataset Description
 
 ### Dataset
 
@@ -18,7 +18,7 @@ An interactive Streamlit application is also developed to allow users to upload 
 
 ### Source
 
-The dataset is publicly available through the UCI Machine Learning Repository and is also available on Kaggle.
+The dataset is publicly available through the UCI Machine Learning Repository - [DataSet Link](https://archive.ics.uci.edu/dataset/222/bank+marketing)
 
 ### Dataset Size
 
@@ -37,9 +37,7 @@ After data cleaning, the dataset contains:
 
 ### Target Variable
 
-The target variable is:
-
-`y`
+The target variable is: `y`
 
 It indicates whether the customer subscribed to a term deposit.
 
@@ -54,40 +52,20 @@ The target variable is therefore highly imbalanced. Because of this imbalance, a
 
 The dataset contains customer demographic information, campaign information, previous contact information, and economic indicators.
 
-The 19 features used for model training are:
-
-- age
-- job
-- marital
-- education
-- default
-- housing
-- loan
-- contact
-- month
-- day_of_week
-- campaign
-- pdays
-- previous
-- poutcome
-- emp.var.rate
-- cons.price.idx
-- cons.conf.idx
-- euribor3m
-- nr.employed
+The 19 features used for model training are: age, job, marital, education, default, housing, loan, contact, month, day_of_week, campaign, pdays, previous, poutcome, emp.var.rate, cons.price.idx, cons.conf.idx, euribor3m, nr.employed
 
 The `duration` feature was excluded from model training because it represents the duration of the current campaign contact and can introduce information that would not be available before the contact takes place.
 
 ---
 
-## 3. GitHub Repository Link
+## c. GitHub Repository Link
 
 **Repository:**  
-[Add GitHub repository link here]
+[GitHub repository link](https://github.com/vedasree-anusha/bank-marketing-ml-2025AC05052)
 
 ---
 
-## 4. Machine Learning Models Used
+## d. Machine Learning Models Used
 
 The following classification models were implemented on the same dataset:
 
@@ -108,7 +86,7 @@ A stratified split was used to preserve the class distribution in the training a
 
 ---
 
-## 5. Model Performance Comparison
+## Model Performance Comparison
 
 The following metrics were calculated for each classification model:
 
@@ -118,6 +96,7 @@ The following metrics were calculated for each classification model:
 - Recall
 - F1 Score
 - Matthews Correlation Coefficient (MCC)
+
 
 | ML Model | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |---|---:|---:|---:|---:|---:|---:|
@@ -129,73 +108,17 @@ The following metrics were calculated for each classification model:
 
 ---
 
-## 6. Model-wise Observations
+## Model-wise Observations
 
-### Logistic Regression
+| ML Model Name                       | Observation about model performance                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Logistic Regression**             | Logistic Regression achieved an accuracy of **83.03%** and an AUC of **80.02%**. It achieved the **highest recall of 64.55%**, indicating that it was effective at identifying customers who actually subscribed to a term deposit. Its F1 Score was **46.15%** and MCC was **0.3928**. Although its accuracy was lower than KNN and Random Forest, it performed well in identifying the minority positive class. |
+| **Decision Tree**                   | Decision Tree achieved an accuracy of **84.63%**. However, its AUC of **62.76%**, F1 Score of **33.58%**, and MCC of **0.2490** were relatively low. Its recall of **34.48%** indicates that it missed a considerable number of customers who actually subscribed. Therefore, Decision Tree was not among the strongest models for this dataset.                                                                  |
+| **KNN**                             | KNN achieved the **highest accuracy of 89.55%** and the **highest precision of 56.63%**. However, its recall was only **30.82%**, meaning that it missed a large proportion of actual positive customers. Since the dataset is highly imbalanced, the high accuracy should be interpreted carefully.                                                                                                              |
+| **Naive Bayes**                     | Naive Bayes achieved an accuracy of **80.82%** and a recall of **62.39%**, showing good ability to identify positive-class customers. However, its precision was only **31.99%**, resulting in more false-positive predictions. Its F1 Score of **42.29%** and MCC of **0.3478** were lower than those of Random Forest and Logistic Regression.                                                                  |
+| **Random Forest (Ensemble)**        | Random Forest achieved an accuracy of **87.02%** and the **highest AUC of 80.91%**. It achieved a recall of **60.78%**, F1 Score of **51.34%**, and the **highest MCC of 0.4478**. It provides the best overall balance between identifying positive customers and limiting incorrect predictions. Therefore, Random Forest was selected as the overall best-performing model.                                    |
+| **Overall Winner for your dataset** | **Random Forest** is the overall winner. It achieved the highest **AUC (80.91%)**, **F1 Score (51.34%)**, and **MCC (0.4478)**, while maintaining a strong recall of **60.78%**. Although KNN achieved higher accuracy (**89.55%**), its recall was only **30.82%**. Because the dataset is highly imbalanced, Random Forest provides a more balanced and reliable overall performance.                           |
 
-Logistic Regression achieved an accuracy of 83.03% and the AUC of 80.02%.
-
-It also achieved the Recall (64.55%), F1 Score (46.15%), and MCC (0.3928).
-
-The recall indicates that the model is effective at identifying customers who actually subscribed to a term deposit. This is particularly useful for this dataset because the positive class represents only approximately 11% of the observations.
-
-Although its accuracy is lower than KNN and Random Forest, its minority-class performance is stronger.
-
----
-
-### Decision Tree
-
-The Decision Tree achieved an accuracy of 84.63%.
-
-However, its AUC of 62.76%, F1 Score of 33.58%, and MCC of 0.2490 were relatively low compared with the other models.
-
-The model also achieved only 34.48% recall for the positive class, indicating that it missed a significant number of customers who actually subscribed.
-
-Therefore, the Decision Tree was not the strongest model for this dataset.
-
----
-
-### K-Nearest Neighbors
-
-KNN achieved the highest overall accuracy of 89.55% and the highest precision of 56.63%.
-
-However, its recall was only 30.82%.
-
-This indicates that although KNN makes relatively precise positive predictions, it misses a large proportion of actual positive customers.
-
-Because the dataset is highly imbalanced, the high accuracy of KNN should therefore be interpreted carefully.
-
----
-
-### Naive Bayes
-
-Naive Bayes achieved an accuracy of 80.82%.
-
-It achieved a relatively high recall of 62.39%, which indicates that it was able to identify many of the positive-class customers.
-
-However, its precision was only 31.99%, resulting in a relatively high number of false-positive predictions.
-
-Its F1 Score of 42.29% was lower than Logistic Regression and Random Forest.
-
----
-
-### Random Forest
-
-Random Forest achieved an accuracy of 87.02% and the highest AUC
-of 80.91%.
-
-It achieved a recall of 60.78%, F1 Score of 51.34%, and MCC of
-0.4478. It provides a strong balance between identifying customers
-who subscribed to a term deposit and avoiding incorrect predictions.
-
-The ensemble approach performs substantially better than the
-individual Decision Tree and achieves the highest F1 Score and MCC
-among all evaluated models.
-
-Random Forest was therefore selected as the overall best-performing
-model for this dataset.
-
----
 
 ## 7. Overall Winner
 
@@ -230,68 +153,16 @@ classification problem.
 
 ---
 
-## 8. Streamlit Web Application
+## How to Run
+```
+pip install -r requirements.txt
 
-An interactive Streamlit application was developed to demonstrate the trained models.
+python -m backend.data_preprocessing
+python -m backend.train
+python -m backend.evaluate
 
-The application provides the following features:
-
-- Upload test data in CSV format
-- Select between the implemented classification models
-- Display Accuracy
-- Display AUC
-- Display Precision
-- Display Recall
-- Display F1 Score
-- Display MCC
-- Display confusion matrix
-- Display classification report
-- Display prediction summary
-- Compare the performance of all models
-
-The application uses the saved trained model pipelines stored in the `model/` directory.
-
-### Live Application
-
-[Add Streamlit Community Cloud link here]
-
+streamlit run app.py 
+```
 ---
+## Streamlit Application
 
-## 9. Project Structure
-
-```text
-bank-marketing-ml-2025AC05052/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-├── test_data.csv
-├── .gitignore
-│
-├── data/
-│   └── bank_data.csv
-│
-├── backend/
-│   ├── __init__.py
-│   ├── data_check.py
-│   ├── data_preprocessing.py
-│   ├── train.py
-│   ├── evaluate.py
-│   └── create_test_data.py
-│
-├── model/
-│   ├── __init__.py
-│   ├── logistic_regression.py
-│   ├── logistic_regression.pkl
-│   ├── decision_tree.py
-│   ├── decision_tree.pkl
-│   ├── knn.py
-│   ├── knn.pkl
-│   ├── naive_bayes.py
-│   ├── naive_bayes.pkl
-│   ├── random_forest.py
-│   └── random_forest.pkl
-│
-└── results/
-    ├── model_comparison.csv
-    └── confusion_matrices/
